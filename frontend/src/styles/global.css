@@ -1,0 +1,215 @@
+:root {
+  --color-primario: #2E7D6B;
+  --color-primario-oscuro: #21594C;
+  --color-fondo: #F7F7F5;
+  --color-texto: #222222;
+  --color-texto-muted: #6B7280;
+  --color-borde: #E0E0E0;
+  --color-error: #C0392B;
+  --color-exito: #2E7D6B;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.contenedor {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.contenedor-ancho {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primario {
+  background: var(--color-primario);
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-secundario {
+  background: transparent;
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto);
+}
+
+.btn-peligro {
+  background: var(--color-error);
+  color: white;
+}
+
+.mensaje-error {
+  background: #FDECEA;
+  color: var(--color-error);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.mensaje-exito {
+  background: #E8F5F1;
+  color: var(--color-exito);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.horario-btn {
+  background: white;
+  border: 1px solid var(--color-borde);
+  padding: 10px 6px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  text-align: center;
+}
+
+.horario-btn.seleccionado {
+  background: var(--color-primario);
+  color: white;
+  border-color: var(--color-primario);
+}
+
+.tabla-responsive {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-responsive th, .tabla-responsive td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--color-borde);
+  text-align: left;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-pendiente { background: #FEF3C7; color: #92400E; }
+.badge-confirmado { background: #D1FAE5; color: #065F46; }
+.badge-cancelado { background: #FEE2E2; color: #991B1B; }
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: white;
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto-muted);
+}
+
+.tab-btn.activo {
+  background: var(--color-primario);
+  color: white;
+  border-color: var(--color-primario);
+}
+
+.header-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dias-semana {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.dia-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1px solid var(--color-borde);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.dia-check input { width: auto; }
