@@ -53,7 +53,7 @@ async function obtenerDisponibilidad(fechaStr) {
   // ¿Está bloqueado por excepción puntual?
   const excepcion = await DiaExcepcion.findOne({ where: { fecha: fechaStr } });
   if (excepcion) {
-    return { disponible: false, motivo: excepcion.motivo || 'Día no disponible.', horarios: [] };
+    return { disponible: false, motivo: 'Dia no disponible' || `Ese día no hay atención debido a (motivo: ${excepcion.motivo}).`, horarios: [] };
   }
 
   // Armar la lista completa de horarios posibles según la configuración
